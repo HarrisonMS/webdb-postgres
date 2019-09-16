@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "server": "cross-env DB_ENV=staging nodemon index.js",
+    "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watch --verbose",
     "test-staging": "cross-env DB_ENV=staging jest --watch --verbose --runInBand",
     "frontend": "knex migrate:rollback && knex migrate:latest && knex seed:run && node index.js",

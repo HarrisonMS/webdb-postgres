@@ -1,7 +1,7 @@
-const db = require('../data/dbConfig.js'),
-      Reviews = require('./reviews.js'),
-      Authors = require('./authors.js'),
-      Subjects = require('./subjects.js');
+const db = require('../data/dbConfig.js');
+// const Reviews = require('./reviews.js');
+// const Authors = require('./authors.js');
+// const Subjects = require('./subjects.js');
 
 module.exports = {
   get,
@@ -46,23 +46,23 @@ function get(id, user_id) {
         .leftJoin('avg', 'avg.book_id', 'books.id')
         .leftJoin('a', 'a.book_id', 'books.id')
         .leftJoin('s', 's.book_id', 'books.id');
-  if (id) {
-    return Promise.all([
-      query
-        .where({'books.id': id})
-        .first(),
-      Reviews.getBy({'book_id': id}),
-      Reviews.getBy({'book_id': id, 'user_id': user_id || 0}).first(),
-    ]).then(([book, reviews, user_review]) => {
-      if (book) {
-        book.reviews = (reviews || null);
-        book.user_review = (user_review || null);
-      }
-      return book;
-    });
-  } else {
+  // if (id) {
+  //   return Promise.all([
+  //     query
+  //       .where({'books.id': id})
+  //       .first(),
+  //     Reviews.getBy({'book_id': id}),
+  //     Reviews.getBy({'book_id': id, 'user_id': user_id || 0}).first(),
+  //   ]).then(([book, reviews, user_review]) => {
+  //     if (book) {
+  //       book.reviews = (reviews || null);
+  //       book.user_review = (user_review || null);
+  //     }
+  //     return book;
+  //   });
+  // } else {
     return query;
-  }
+  // }
 }
 
 function insert(book) {

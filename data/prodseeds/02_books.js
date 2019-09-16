@@ -184,5 +184,16 @@ Written by two experienced systems programmers, this book explains how Rust mana
     - Unsafe code, and how to preserve the integrity of ordinary code that uses it
     - Extended examples illustrating how pieces of the language fit together`
       },
+      // 16
+      {
+        title: 'A Fake Book',
+        isbn: '2222222222222',
+        cover_url: 'https://www.uscibooks.com/taycm.jpg',
+        publisher_id: 1,
+        edition: "1",
+        year: 2005,
+        featured: true,
+        description: "This is not a real book"
+      },
     ]));
 };

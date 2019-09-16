@@ -49,6 +49,8 @@ exports.seed = function(knex, Promise) {
       {name: "Jim Blandy"},
       // 24
       {name: "Jason Orendorff"},
+      // 25
+      {name: "Professor Professorson"},
     ]))
     .then(() => knex('books_authors').del())
     .then(() => knex('books_authors').insert([
@@ -77,5 +79,6 @@ exports.seed = function(knex, Promise) {
       {book_id: 14, author_id: 22},
       {book_id: 15, author_id: 23},
       {book_id: 15, author_id: 24},
+      // {book_id: 16, author_id: 25},
     ]));
 };
