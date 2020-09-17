@@ -15,7 +15,7 @@
     "docs": "npx apidoc -f .js -i ./routes -o docs/ -e node_modules/"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
